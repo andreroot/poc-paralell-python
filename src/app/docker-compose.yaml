@@ -1,0 +1,43 @@
+services:
+  n8n:
+    container_name: n8n
+    image: n8nio/n8n:latest
+    restart: always
+    ports:
+      - "5678:5678"
+    volumes:
+      - ~/.n8n:/home/node/.n8n
+    environment:
+      - N8N_SECURE_COOKIE=false
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin
+    networks:
+      - default
+      - internal
+
+  revops-base-contatos-svc:
+    container_name: revops-base-contatos-svc
+    platform: linux/amd64
+    build:
+      context: .
+      no_cache: true
+      args:
+        - GITHUB_TOKEN=$GIT_TOKEN
+    environment:
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION=$AWS_REGION
+    ports:
+      - 5001
+    networks:
+      - internal
+
+networks:
+  default:
+    driver: bridge
+  internal:
+    driver: bridge
+    internal: true
+
+

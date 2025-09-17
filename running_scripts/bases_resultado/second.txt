@@ -1,0 +1,6 @@
+processos executados apos as bases histroicas
+são processos que demandam um alto processmaento do banco pois vao gerar bases do portifolio
+aciona uma function para gerar as bases num tabela temporaria que pode ser dropada e gerada novamente
+
+# --> <thunders>.dbo.s_all_operations(@DataHistorico)
+# --> grava na tabela [modelo].[BaseHistorica].[BoletasProcessadasv2]

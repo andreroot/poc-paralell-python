@@ -1,0 +1,17 @@
+{
+    "webhook":{
+                "parametros_webhook":{
+                    "tag_monitoria": "tag_monitoria",
+                    "erro": "erro"
+                },
+                "msg_webhook":
+                {
+                    "url_webhook": "https://safira.webhook.office.com/webhookb2/dcf11fd6-f480-4438-a03e-b9088847745f@35d0502c-7339-451e-b90e-e585949701c4/IncomingWebhook/b9dd3ef27a714307b51448c9d1be8cc9/b7777832-c01a-4727-a99a-f27e0fd087fd/V2CNPcFhpM_DoMZMcn22biFddWYiBJboPU80yG504kpFM1",
+                    "dash":"🔗 [View PowerBI - Monitoria](https://app.powerbi.com/groups/f81782b3-9646-41d1-824c-6dc42e154388/reports/e7e42e09-6a5f-47bf-afc4-9a253a52da0c/ReportSection495bfff94788a35f96d9?experience=power-bi)",
+                    "info1": "🙀 PROCESSO:{tag_monitoria} | ERRO:{erro}, necessário verificar dash monitoria: sql-server/{tag_monitoria}"
+        
+                }
+
+            }
+        
+}

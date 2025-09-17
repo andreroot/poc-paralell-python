@@ -1,0 +1,7 @@
+são processos executados com prioridade para gerar bases histroicas dos dados da dbo.operation dos thuders
+as bases são geradas com foto dos dados extraidos do ultimo estado d-1 das dbo.operation
+
+primeira execução necessário ser processo que chama
+[Modelo].[dbo].[STP_operation_history] e gera base Modelo.dbo.proc_operation_history
+
+obs: a integração executa a cada 10min e acrescenta dados nas dbo.operation de cd thunders

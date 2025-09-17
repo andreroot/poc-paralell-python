@@ -1,0 +1,29 @@
+{
+    "process": "Process",
+    "folders":{
+          "file_path":   "input/Process/query.txt",
+          "folder_path": "input/Process/queryfilho",
+          "output_path": "input/Process/output/output_config.json"
+      },
+      "dataframes": {
+        "query1.txt": {
+            "name": "df_erro_operacional2",
+            "error_name": "erros_execution_log_interrupted",
+            "output_type": "erros_execution_log_interrupted",
+            "description": "ExecutionLog",
+            "process": ["WebHookTeams"],
+            "interessados": ["Risco"],
+            "save_dataframe":{
+                  "output_save": ["./output/"]
+            },
+            "webhook":{
+              "msg_webhook":
+              {
+                "url_webhook": "https://safira.webhook.office.com/webhookb2/dcf11fd6-f480-4438-a03e-b9088847745f@35d0502c-7339-451e-b90e-e585949701c4/IncomingWebhook/b9dd3ef27a714307b51448c9d1be8cc9/b7777832-c01a-4727-a99a-f27e0fd087fd/V2CNPcFhpM_DoMZMcn22biFddWYiBJboPU80yG504kpFM1",
+                "info1": "🙀 DETECTADO ERRO necessário verificar dash monitoria"
+    
+              }
+            }
+        }
+    }
+}

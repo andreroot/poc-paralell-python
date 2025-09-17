@@ -1,0 +1,18 @@
+--> processo geram bases no banco modelo
+operation_history.py
+
+1. gerar base executando procedure [dbo].[STP_operation_history]
+    Modelo.[dbo].[proc_operation_history] COM COLUNAS ORIGINAIS
+
+    union das bases [Thunders].dbo.operation_history de cada thunders
+
+poc_historico
+executa uma proc [dbo].[STP_gera_bases_POC_Historico] no banco Modelo
+
+que faz a query na base gerada no processo anterior
+usando a proc Modelo.dbo.[s_all_operations_portfolio](@dataHistorico_d_0) QUE GERA UM RETORNO COM COLUNAS TRATADAS E CALCULADAS, GERANDO UMA NOVA TABELA PARA SER USADA NESSA PROC
+
+    dentro da proc, realiza uma query usando dbo.s_all_operations(@dataVigencia) que executa outra proc
+    1.1. que faz um select que retorna Modelo.[dbo].[proc_operation_history] com esses filtros
+        return SELECT * FROM Modelo.[dbo].[proc_operation_history] WHERE @dataVigencia BETWEEN ValidFrom AND ValidTo AND IsSyncDeletedAtNull = 1
+    1.2. gera duas novas tabela Modelo.dbo.proc_POC_Historico_portfolio_d0 com nome s de colunas diferenets

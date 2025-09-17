@@ -1,0 +1,13 @@
+2024-10-14 23:05:12.142571
+execução do decorator-stream: sql-server/extract_indra_all_operations
+inicio do envio para kinesis
+{"HASH_SEND_K": "bf504bf06a863b0135cbaba1d6d2a49fa0fb2229f3621f7af319459382ff064d", "DATE_SEND_K": "2024-10-14T23:05:14.280563", "ID_PROCESS_NAME": "f9daee1960baad96a0c3f179ed7c644de9144bd1ad52cd05ebea0d20a8046654", "PROCESS_NAME_PAI": "sql-server/extract_indra_all_operations", "PROCESS_NAME": "ExecProcessSqlServerNew", "STEP_NAME": "extract_indra_all_operations", "STATUS": "EXECUTANDO", "DATE_START": "2024-10-14T23:05:12.142751", "DATE_END": null, "TIPO_SERVICO": "monitoria", "JSON": "{\"key\": \"value\"}", "DESCRICAO_STATUS": "EXECUTANDO"}
+Sucess put record in stream safira-kinesis-stream.
+buscar credencial na aws
+Linux
+Creating engine - sqlalchemy...
+Driver SQL: 'ODBC Driver 18 for SQL Server'
+conectado as 2024-10-14 23:05:16.713640
+{"HASH_SEND_K": "d79428266e0ba29e8072bff129642bd7fe1771b269a971fe3ea30243cb530044", "DATE_SEND_K": "2024-10-14T23:16:52.047636", "ID_PROCESS_NAME": "f9daee1960baad96a0c3f179ed7c644de9144bd1ad52cd05ebea0d20a8046654", "PROCESS_NAME_PAI": "sql-server/extract_indra_all_operations", "PROCESS_NAME": "ExecProcessSqlServerNew", "STEP_NAME": "extract_indra_all_operations", "STATUS": "OK", "DATE_START": "2024-10-14T23:05:12.142751", "DATE_END": "2024-10-14T23:16:51.039594", "TIPO_SERVICO": "monitoria", "JSON": "{\"key\": \"value\"}", "DESCRICAO_STATUS": "Dados inseridos (32433)"}
+Sucess put record in stream safira-kinesis-stream.
+2024-10-14 23:16:52.952230

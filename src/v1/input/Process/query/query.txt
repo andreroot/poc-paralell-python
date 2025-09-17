@@ -1,0 +1,32 @@
+
+        SET NOCOUNT ON;
+        SET ANSI_WARNINGS OFF;
+        BEGIN
+
+            DECLARE @data_historico_d0 AS DATE;
+            DECLARE @anofornecimento_min AS INT;
+
+            SET @anofornecimento_min=2025;
+            
+            SET @data_historico_d0 = (SELECT max(DataHistorico_d1) FROM Modelo.[POC_Historico].[Diferencas_agg] );
+            
+            DECLARE @dataHistorico_d_0 AS VARCHAR(32) = CAST(CONVERT(varchar(32), @data_historico_d0, 127) + 'T23:59:59.9999999Z' AS DATETIME2);
+
+            IF OBJECT_ID('tempdb..#TempBoletas') IS NOT NULL
+            BEGIN
+                DROP TABLE #TempBoletas;
+            END
+
+            SELECT * INTO #TempBoletas
+            FROM (
+                    SELECT * 
+                    FROM Modelo.dbo.proc_operation_history with (nolock) 
+                    --where createdat >= '2025-03-04' order by createdAt desc
+                    WHERE @dataHistorico_d_0 BETWEEN ValidFrom AND ValidTo
+                    AND IsSyncDeletedAtNull = 1
+                    AND CONVERT([date],CONVERT([varchar](8),[year]*10000+[month]*100+1)) >= DATEFROMPARTS(@anofornecimento_min, 1, 1)
+                    ) TempBoletas;
+
+            SELECT * FROM #TempBoletas;
+
+        END;

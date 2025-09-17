@@ -1,0 +1,11 @@
+processos executados apos as bases do portifolio
+
+primeiro essa proc, que gera uma tabela de posição( usa a tabelas temporaria de portifolio )
+# --> portifolio [modelo].[BaseHistorica].[BoletasProcessadasv2]
+
+C:\Users\abarbosa\Documents\projetos\processos_sql_server\src\v0\bases_final\run_bsecond_bases_posicao_subproc.py
+
+#--> book.Book.HistoricoPosicao_log 
+
+uasada no proximo processo que gera os resultados
+C:\Users\abarbosa\Documents\projetos\processos_sql_server\src\v0\bases_final\run_cthird_bases_resultado_subproc.py
